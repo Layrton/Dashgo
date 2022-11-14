@@ -11,6 +11,10 @@ if (process.env.NODE_ENV === 'development') {
   makeServer()
 }
 
+if (process.env.NODE_ENV === 'production') {
+  makeServer()
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
