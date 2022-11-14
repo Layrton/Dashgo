@@ -3,11 +3,13 @@ import { Button } from '@chakra-ui/button'
 interface PaginationItemProps {
   pageNumber: number
   isCurrent?: boolean
+  onPageChange: (page: number) => void
 }
 
 export function PaginationItem({
   isCurrent = false,
   pageNumber,
+  onPageChange,
 }: PaginationItemProps) {
   if (isCurrent) {
     return (
@@ -31,6 +33,7 @@ export function PaginationItem({
       width="4"
       bg="gray.700"
       _hover={{ bg: 'gray.500' }}
+      onClick={() => onPageChange(pageNumber)}
     >
       {pageNumber}
     </Button>
